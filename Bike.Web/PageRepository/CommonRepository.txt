@@ -4,3 +4,5 @@ ${txtPassword}    xpath=//*[@id="txtpass"]
 ${btnSignIn}      xpath=//*[@id="btnlogin"]
 ${BikeStagingUrl}    https://staging.claimdi.com/
 ${LoginClaimDiLogo}    xpath=//*[@id="frmBody"]/section/div[1]
+${lblWelcome}     xpath=//*[@id="leftMenu"]/div/div[3]/a/div[2]/span
+${lblInvalid}     xpath=//*[@id="h6"]

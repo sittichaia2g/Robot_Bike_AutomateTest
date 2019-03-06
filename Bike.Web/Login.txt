@@ -5,27 +5,27 @@ Resource          PageKeyword/LoginKeyword.txt
 [S01] - Success
     [Tags]    Success
     Open BikeStagingWeb    ${ar_BROWSER}
+    Maximize Browser Window
     Login
     [Teardown]    Close Browser
 
-[F01] - Incorrect Password
+[F03] - EmptyUserNameAndPassword
+    [Tags]    Success
     Open BikeStagingWeb    ${ar_BROWSER}
-    A2G Input Text    ${txtUserName}    ${besUserName}
-    A2G Input Text    ${txtPassword}    1234
-    A2G Click Element    ${btnLogin}
-    A2G Element Should Contains    ${msgLoginResult}    ${loginNotSuccess}
+    Maximize Browser Window
+    A2G Input Text    ${txtUserName}    \    30
+    A2G Input Password    ${txtPassword}    \    30
+    A2G Click Element    ${btnSignIn}
+    Capture Page Screenshot    Login_EmptyUsernamePassword.png
     [Teardown]    Close Browser
 
-[F02] - Not Input UserName
+[F4] - IncurrectUsernameAndPassword
+    [Tags]    Success
     Open BikeStagingWeb    ${ar_BROWSER}
-    A2G Input Text    ${txtPassword}    ${besUserName}
-    A2G Click Element    ${btnLogin}
-    A2G Element Should Contains    ${msgLoginResult}    ${missingUserNameOrPassword}
-    [Teardown]    Close Browser
-
-[F03] - Not Input Password
-    Open BikeStagingWeb    ${ar_BROWSER}
-    A2G Input Text    ${txtUserName}    ${besUserName}
-    A2G Click Element    ${btnLogin}
-    A2G Element Should Contains    ${msgLoginResult}    ${missingUserNameOrPassword}
+    Maximize Browser Window
+    A2G Input Text    ${txtUserName}    aaa    30
+    A2G Input Password    ${txtPassword}    123    30
+    A2G Click Element    ${btnSignIn}
+    A2G Element Should Contains    ${lblInvalid}    ${loginNotSuccess}
+    Capture Page Screenshot    Login_InvalidUsernamePassword.png
     [Teardown]    Close Browser

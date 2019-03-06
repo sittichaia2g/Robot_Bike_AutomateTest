@@ -12,5 +12,5 @@ Login
     A2G Input Text    ${txtUserName}    ${bikeUserName}    30
     A2G Input Password    ${txtPassword}    ${bikePassword}    30
     A2G Click Element    ${btnSignIn}
-    Wait Until Keyword Succeeds    10    1    A2G Element Should Contains    xpath=//*[@id="leftMenu"]/div/div[3]/a/div[2]/span    Welcome,
+    Wait Until Keyword Succeeds    10    1    A2G Element Should Contains    ${lblWelcome}    Welcome,
     Capture Page Screenshot    Login_Success.png
