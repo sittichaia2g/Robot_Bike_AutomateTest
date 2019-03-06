@@ -1,0 +1,5 @@
+*** Variables ***
+${success}        Success
+${fail}           Fail
+${bikeUserName}    admin
+${bikePassword}    12345

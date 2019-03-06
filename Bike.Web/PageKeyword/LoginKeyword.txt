@@ -1,0 +1,3 @@
+*** Settings ***
+Resource          CommonKeyword.txt
+Resource          ../PageLocalization/LoginLocalization.txt

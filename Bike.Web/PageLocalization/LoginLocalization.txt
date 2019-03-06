@@ -1,0 +1,2 @@
+*** Variables ***
+${loginNotSuccess}    invalid login, Please try again .

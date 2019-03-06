@@ -1,0 +1,6 @@
+*** Variables ***
+${txtUserName}    xpath=//*[@id="txtuser"]
+${txtPassword}    xpath=//*[@id="txtpass"]
+${btnSignIn}      xpath=//*[@id="btnlogin"]
+${BikeStagingUrl}    https://staging.claimdi.com/
+${LoginClaimDiLogo}    xpath=//*[@id="frmBody"]/section/div[1]

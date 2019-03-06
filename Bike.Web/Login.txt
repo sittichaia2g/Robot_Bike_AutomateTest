@@ -1,0 +1,31 @@
+*** Settings ***
+Resource          PageKeyword/LoginKeyword.txt
+
+*** Test Cases ***
+[S01] - Success
+    [Tags]    Success
+    Open BikeStagingWeb    ${ar_BROWSER}
+    Login
+    [Teardown]    Close Browser
+
+[F01] - Incorrect Password
+    Open BikeStagingWeb    ${ar_BROWSER}
+    A2G Input Text    ${txtUserName}    ${besUserName}
+    A2G Input Text    ${txtPassword}    1234
+    A2G Click Element    ${btnLogin}
+    A2G Element Should Contains    ${msgLoginResult}    ${loginNotSuccess}
+    [Teardown]    Close Browser
+
+[F02] - Not Input UserName
+    Open BikeStagingWeb    ${ar_BROWSER}
+    A2G Input Text    ${txtPassword}    ${besUserName}
+    A2G Click Element    ${btnLogin}
+    A2G Element Should Contains    ${msgLoginResult}    ${missingUserNameOrPassword}
+    [Teardown]    Close Browser
+
+[F03] - Not Input Password
+    Open BikeStagingWeb    ${ar_BROWSER}
+    A2G Input Text    ${txtUserName}    ${besUserName}
+    A2G Click Element    ${btnLogin}
+    A2G Element Should Contains    ${msgLoginResult}    ${missingUserNameOrPassword}
+    [Teardown]    Close Browser
