@@ -1,0 +1,49 @@
+*** Settings ***
+Library           Selenium2Library
+
+*** Keywords ***
+A2G Click Element
+    [Arguments]    ${locator}    ${timeout}=10
+    Wait Until Element Is Visible    ${locator}    ${timeout}
+    Click Element    ${locator}
+
+A2G Input Text
+    [Arguments]    ${locator}    ${text}    ${timeout}=10
+    Wait Until Element Is Visible    ${locator}    ${timeout}
+    Input Text    ${locator}    ${text}
+
+A2G Input Password
+    [Arguments]    ${locator}    ${password}    ${timeout}=10
+    Wait Until Element Is Visible    ${locator}    ${timeout}
+    Input Password    ${locator}    ${password}
+
+A2G Element Text Should Be
+    [Arguments]    ${locator}    ${text}    ${timeout}=10
+    Wait Until Element Is Visible    ${locator}    ${timeout}
+    Element Text Should Be    ${locator}    ${text}
+
+A2G Element Should Contains
+    [Arguments]    ${locator}    ${text}    ${timeout}=10    ${ignoreCase}=False
+    Element Should Be Visible    ${locator}    ${timeout}
+    Element Should Contain    ${locator}    ${text}    ${ignoreCase}
+
+A2G Select From List By Index
+    [Arguments]    ${locator}    ${index}    ${timeout}=10
+    Wait Until Element Is Visible    ${locator}    ${timeout}
+    Select From List By Index    ${locator}    ${index}
+
+A2G Select From List By Label
+    [Arguments]    ${locator}    ${label}    ${timeout}=10
+    Wait Until Element Is Visible    ${locator}    ${timeout}
+    Select From List By Label    ${locator}    ${label}
+
+A2G Select From List By Value
+    [Arguments]    ${locator}    ${value}    ${timeout}=10
+    Wait Until Element Is Visible    ${locator}    ${timeout}
+    Select From List By Value    ${locator}    ${value}
+
+A2G Get Text
+    [Arguments]    ${locator}    ${timeout}=10
+    Wait Until Element Is Visible    ${locator}    ${timeout}
+    ${Text}    Get Text    ${locator}
+    [Return]    ${Text}
