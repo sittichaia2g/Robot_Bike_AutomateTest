@@ -2,4 +2,4 @@
 ${success}        Success
 ${fail}           Fail
 ${bikeUserName}    admin
-${bikePassword}    12345
+${bikePassword}    123456
